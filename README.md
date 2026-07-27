@@ -29,7 +29,8 @@ A modern, real-time travel scheduler — with smart timeline sorting, live statu
 
 <div align="center">
 
-<img src="docs/hero.jpg" alt="Personal Trip Organizer — Hero Dashboard" width="100%" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
+<img src="public/Screenshot1.png" alt="Personal Trip Organizer — Timeline" width="49%" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
+<img src="public/Screenshot2.png" alt="Personal Trip Organizer — Dashboard" width="49%" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
 
 </div>
 
