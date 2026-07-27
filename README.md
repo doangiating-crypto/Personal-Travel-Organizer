@@ -45,18 +45,23 @@ A modern, real-time travel scheduler — with smart timeline sorting, live statu
 
 <div align="center">
 
-<figure>
-  <img src="public/Screenshot1.png" alt="Personal Trip Organizer — Timeline" width="100%" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
-  <figcaption><b>Giao diện Quản lý Lịch trình:</b> Dòng thời gian trực quan, sắp xếp thứ tự và cập nhật trạng thái thời gian thực</figcaption>
+<br />
+
+<figure style="margin: 30px 0 10px 0;">
+  <img src="public/Screenshot1.png" alt="Personal Trip Organizer — Timeline" width="100%" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 12px;" />
+  <figcaption><b>Timeline Management Interface:</b> An intuitive chronological timeline with drag & swap reordering and real-time status updates.</figcaption>
 </figure>
 
 <br />
 <br />
+<br />
 
-<figure>
-  <img src="public/Screenshot2.png" alt="Personal Trip Organizer — Dashboard" width="100%" style="border-weight: 1px; width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
-  <figcaption><b>Giao diện Thống kê:</b> Biểu đồ hoạt động và hiển thị các sự kiện đang diễn ra được thu gọn tinh tế</figcaption>
+<figure style="margin: 10px 0 30px 0;">
+  <img src="public/Screenshot2.png" alt="Personal Trip Organizer — Dashboard" width="100%" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 12px;" />
+  <figcaption><b>Statistics Dashboard:</b> Activity distribution analytics, status highlights, and a compact ongoing events monitor.</figcaption>
 </figure>
+
+<br />
 
 </div>
 
