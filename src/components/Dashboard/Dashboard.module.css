@@ -1,0 +1,141 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.highlightSection {
+  background-color: var(--color-blue-50);
+  border: 1px solid var(--color-blue-100);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-4);
+}
+
+.highlightTitle {
+  margin: 0 0 var(--spacing-3) 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.pulseIcon {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-green-500);
+  border-radius: var(--radius-full);
+  animation: pulse-glow 2s infinite;
+}
+
+.chartsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.chartCard {
+  background-color: var(--color-gray-50);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4);
+}
+
+.chartTitle {
+  margin: 0 0 var(--spacing-4) 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-gray-700);
+  text-align: center;
+}
+
+.canvasWrapper {
+  position: relative;
+  height: 200px;
+  width: 100%;
+}
+
+.summaryStats {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.statBox {
+  flex: 1;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-1);
+}
+
+.statValue {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-blue-600);
+}
+
+/* Ongoing List Styles */
+.ongoingList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.ongoingItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-white);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-blue-100);
+  font-size: 0.875rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.ongoingInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ongoingName {
+  font-weight: 600;
+  color: var(--color-gray-900);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ongoingLocation {
+  color: var(--color-gray-600);
+  font-size: 0.8125rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ongoingTime {
+  font-weight: 700;
+  color: var(--color-blue-600);
+  background-color: var(--color-blue-50);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  margin-left: var(--spacing-2);
+}

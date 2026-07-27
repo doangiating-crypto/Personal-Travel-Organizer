@@ -1,0 +1,143 @@
+.dropdownContainer {
+  position: relative;
+  width: 100%;
+}
+
+.dropdownTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-2) var(--spacing-3);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  color: var(--color-gray-900);
+  cursor: pointer;
+  transition: border-color var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+}
+
+.dropdownTrigger:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-blue-100);
+}
+
+.triggerContent {
+  display: flex;
+  align-items: center;
+}
+
+.chevron {
+  color: var(--color-gray-500);
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: var(--spacing-2);
+  list-style: none;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 50;
+  
+  /* Fade-in & slide-down animation */
+  animation: slideDown 0.2s ease forwards;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdownItem {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 8px; /* as requested */
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+  transition: background-color 0.15s ease;
+  overflow: hidden; /* For ripple */
+}
+
+.itemActive,
+.dropdownItem:hover {
+  background-color: #f5f5f5; /* Light gray pastel background for hover/active */
+}
+
+.itemSelected {
+  background-color: var(--color-blue-50);
+}
+
+/* Ripple effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-anim 0.6s linear;
+  background-color: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+
+@keyframes ripple-anim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badgeBlue {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+.badgeGreen {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.badgeYellow {
+  background-color: #fef08a;
+  color: #ca8a04;
+}
+
+.badgeRed {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.badgeGray {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}

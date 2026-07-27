@@ -1,0 +1,65 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-4) 0;
+}
+
+.timelineItem {
+  display: flex;
+  position: relative;
+}
+
+.timelineLine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: var(--spacing-4);
+  position: relative;
+  min-width: 24px;
+}
+
+/* Kẻ đường dọc cho timeline */
+.timelineLine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-gray-200);
+  z-index: 0;
+}
+
+/* Không kẻ đường dọc cho phần dưới của item cuối cùng */
+.timelineItem:last-child .timelineLine::before {
+  bottom: auto;
+  height: 24px; /* Chỉ kẻ một đoạn ngắn xuống dot */
+}
+
+.timelineDot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-white);
+  z-index: 1;
+  margin-top: 24px; /* Căn chỉnh với card header */
+  box-shadow: 0 0 0 2px var(--color-blue-100);
+}
+
+.timelineContent {
+  flex: 1;
+  padding-bottom: var(--spacing-4); /* Khoảng cách giữa các card */
+}
+
+.timelineItem:last-child .timelineContent {
+  padding-bottom: 0;
+}
+
+.empty {
+  text-align: center;
+  padding: var(--spacing-8);
+  color: var(--color-muted);
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--color-border);
+}

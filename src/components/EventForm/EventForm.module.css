@@ -1,0 +1,130 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.row {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.row > * {
+  flex: 1;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-gray-700);
+}
+
+.required {
+  color: var(--color-red-500);
+}
+
+.input, .textarea {
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-size: 0.875rem;
+  font-family: inherit;
+  transition: all var(--duration-fast) ease;
+  outline: none;
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: var(--color-gray-400);
+  opacity: 1;
+}
+
+.input:focus, .textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-blue-100);
+}
+
+.textarea {
+  resize: vertical;
+}
+
+/* Validation styles */
+.inputError {
+  border-color: var(--color-red-500);
+  background-color: var(--color-red-100);
+}
+
+.inputError:focus {
+  border-color: var(--color-red-500);
+  box-shadow: 0 0 0 2px var(--color-red-100);
+}
+
+.errorText {
+  font-size: 0.75rem;
+  color: var(--color-red-500);
+  margin-top: 0.25rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-2);
+}
+
+.btnCancel, .btnSave {
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) ease, opacity var(--duration-fast) ease;
+  border: none;
+}
+
+.btnCancel {
+  background-color: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+
+.btnCancel:hover {
+  background-color: var(--color-gray-300);
+}
+
+.btnSave {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btnSave:hover:not(:disabled) {
+  background-color: var(--color-blue-700);
+}
+
+.btnSave:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Calendar icon hover effect */
+.input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+  background-color: var(--color-gray-200);
+}
+
+.input[type="datetime-local"]::-webkit-calendar-picker-indicator:active {
+  background-color: var(--color-gray-300);
+  transform: scale(0.95);
+}
