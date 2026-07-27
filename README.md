@@ -11,12 +11,28 @@
 A modern, real-time travel scheduler — with smart timeline sorting, live status tracking, and instant statistical insights built right in.
 
 <br />
+<br />
+
+<a href="https://personal-travel-organizer.vercel.app/" target="_blank">
+  <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Click%20to%20Launch-blueviolet?style=for-the-badge&labelColor=1a1a1a" alt="Live Demo" />
+</a>
+
+<br />
+<br />
 
 <a href="https://react.dev/"><img alt="React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /></a>
 &nbsp;
 <a href="https://vitejs.dev/"><img alt="Vite" src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" /></a>
 &nbsp;
 <a href="https://www.typescriptlang.org/"><img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" /></a>
+&nbsp;
+<img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+&nbsp;
+<img alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+&nbsp;
+<img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+&nbsp;
+<img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
 &nbsp;
 <a href="https://github.com/"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
 
@@ -29,14 +45,24 @@ A modern, real-time travel scheduler — with smart timeline sorting, live statu
 
 <div align="center">
 
-<img src="public/Screenshot1.png" alt="Personal Trip Organizer — Timeline" width="49%" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
-<img src="public/Screenshot2.png" alt="Personal Trip Organizer — Dashboard" width="49%" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
+<figure>
+  <img src="public/Screenshot1.png" alt="Personal Trip Organizer — Timeline" width="100%" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
+  <figcaption><b>Giao diện Quản lý Lịch trình:</b> Dòng thời gian trực quan, sắp xếp thứ tự và cập nhật trạng thái thời gian thực</figcaption>
+</figure>
+
+<br />
+<br />
+
+<figure>
+  <img src="public/Screenshot2.png" alt="Personal Trip Organizer — Dashboard" width="100%" style="border-weight: 1px; width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
+  <figcaption><b>Giao diện Thống kê:</b> Biểu đồ hoạt động và hiển thị các sự kiện đang diễn ra được thu gọn tinh tế</figcaption>
+</figure>
 
 </div>
 
 <br />
 
-## 🌟 What you get
+## What you get
 
 <details open>
 <summary><b>See all features</b></summary>
@@ -91,17 +117,18 @@ A modern, real-time travel scheduler — with smart timeline sorting, live statu
 
 <br />
 
-## 🚀 Get started in 30 seconds
+##  Get started in 30 seconds
 
 Clone this repository and run the local development server:
 
 ```bash
-# Cài đặt dependencies
+# Set up dependencies
 npm install
 
-# Khởi chạy dự án ở môi trường dev
+# Run the project in dev enviroment
 npm run dev
 ```
+
 
 Open `http://localhost:5173` in your browser. Start adding your events and let the Realtime Engine handle the rest!
 
