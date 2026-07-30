@@ -13,6 +13,7 @@ A modern, real-time travel scheduler — with smart timeline sorting, live statu
 <br />
 <br />
 
+
 <a href="https://personal-travel-organizer.vercel.app/" target="_blank">
   <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Click%20to%20Launch-blueviolet?style=for-the-badge&labelColor=1a1a1a" alt="Live Demo" />
 </a>
@@ -122,20 +123,22 @@ A modern, real-time travel scheduler — with smart timeline sorting, live statu
 
 <br />
 
-##  Get started in 30 seconds
+### Live demo
 
+
+## Local development
 Clone this repository and run the local development server:
 
 ```bash
 # Set up dependencies
 npm install
-
-# Run the project in dev enviroment
+# Run the project in dev environment
 npm run dev
 ```
 
-
 Open `http://localhost:5173` in your browser. Start adding your events and let the Realtime Engine handle the rest!
+
+*P/S: if you want live demo, click the button "Live Demo" at the top of this document*
 
 ---
 
