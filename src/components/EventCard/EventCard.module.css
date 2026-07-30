@@ -9,6 +9,24 @@
   position: relative;
   overflow: hidden;
   margin-bottom: var(--spacing-4);
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-4);
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.moveControls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-2);
+  border-left: 1px solid var(--color-gray-100);
+  padding-left: var(--spacing-3);
 }
 
 .card:hover {
@@ -85,8 +103,8 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   color: var(--color-gray-600);
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,18 +117,41 @@
   color: var(--color-foreground);
 }
 
+.iconActive {
+  opacity: 0.4;
+  background-color: var(--color-gray-100);
+}
+
 .statusBadge {
   font-size: 0.75rem;
   font-weight: 500;
   padding: var(--spacing-1) var(--spacing-2);
   border-radius: var(--radius-sm);
+}
+
+.statusUpcoming {
+  background-color: var(--color-blue-50);
+  color: var(--color-blue-600);
+}
+
+.statusOngoing {
+  background-color: var(--color-green-100);
+  color: var(--color-green-500);
+}
+
+.statusCompleted {
   background-color: var(--color-gray-100);
   color: var(--color-gray-600);
 }
 
-.upcoming {
-  background-color: var(--color-blue-50);
-  color: var(--color-blue-600);
+.statusCancelled {
+  background-color: var(--color-red-100);
+  color: var(--color-red-500);
+}
+
+.statusPostponed {
+  background-color: var(--color-orange-100);
+  color: var(--color-orange-500);
 }
 
 /* Modifiers for statuses */
@@ -137,6 +178,7 @@
 .completed {
   border-color: var(--color-gray-300);
   background-color: var(--color-gray-50);
+  opacity: 0.5;
 }
 .completed .title {
   color: var(--color-gray-600);

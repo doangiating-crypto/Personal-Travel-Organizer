@@ -6,7 +6,7 @@ import { Timeline } from './components/Timeline/Timeline';
 import { Dashboard } from './components/Dashboard/Dashboard';
 import { Modal } from './components/Modal/Modal';
 import { EventForm } from './components/EventForm/EventForm';
-import { Map, BarChart3 } from 'lucide-react';
+import { Map, BarChart3, Search } from 'lucide-react';
 import styles from './App.module.css';
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingEvent, setEditingEvent] = useState<TripEvent | undefined>(undefined);
   const [activeTab, setActiveTab] = useState<'manage' | 'stats'>('manage');
+  const [searchQuery, setSearchQuery] = useState('');
 
   // Hook realtime engine
   useRealtimeEngine(events, setEvents);
@@ -62,6 +63,14 @@ function App() {
     setEvents(updatedEvents);
   };
 
+  const handleChangeEventStatus = (event: TripEvent, status: TripEvent['status']) => {
+    setEvents(events.map(ev => ev.id === event.id ? { ...ev, status } : ev));
+  };
+
+  const filteredEvents = events.filter(ev => 
+    ev.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className={styles.layout}>
       <aside className={styles.sidebar}>
@@ -95,26 +104,39 @@ function App() {
               {activeTab === 'manage' ? 'Sắp xếp và theo dõi chuyến đi của bạn' : 'Phân tích các hoạt động trong chuyến đi'}
             </p>
           </div>
-          {activeTab === 'manage' && (
-            <button className={styles.btnAdd} onClick={handleOpenAddModal}>
-              + Thêm sự kiện
-            </button>
-          )}
+          <div className={styles.headerActions}>
+            <div className={styles.searchBox}>
+              <Search className={styles.searchIcon} />
+              <input 
+                type="text" 
+                placeholder="Tìm sự kiện..." 
+                className={styles.searchInput}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+            {activeTab === 'manage' && (
+              <button className={styles.btnAdd} onClick={handleOpenAddModal}>
+                + Thêm sự kiện
+              </button>
+            )}
+          </div>
         </header>
 
         <main className={styles.main}>
           {activeTab === 'manage' ? (
             <div className={styles.timelineSection}>
               <Timeline
-                events={events}
+                events={filteredEvents}
                 onEditEvent={handleEditEvent}
                 onSwapEvents={handleSwapEvents}
+                onChangeEventStatus={handleChangeEventStatus}
               />
             </div>
           ) : (
             <div className={styles.dashboardSection}>
               <div className={styles.card}>
-                <Dashboard events={events} />
+                <Dashboard events={filteredEvents} />
               </div>
             </div>
           )}

@@ -7,9 +7,10 @@ interface TimelineProps {
   events: TripEvent[];
   onEditEvent: (event: TripEvent) => void;
   onSwapEvents: (event1: TripEvent, event2: TripEvent) => void;
+  onChangeEventStatus: (event: TripEvent, status: TripEvent['status']) => void;
 }
 
-export const Timeline: React.FC<TimelineProps> = ({ events, onEditEvent, onSwapEvents }) => {
+export const Timeline: React.FC<TimelineProps> = ({ events, onEditEvent, onSwapEvents, onChangeEventStatus }) => {
   // Sắp xếp các sự kiện theo thời gian bắt đầu
   const sortedEvents = [...events].sort(
     (a, b) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime()
@@ -48,6 +49,7 @@ export const Timeline: React.FC<TimelineProps> = ({ events, onEditEvent, onSwapE
               onClick={onEditEvent}
               onMoveUp={handleMoveUp}
               onMoveDown={handleMoveDown}
+              onChangeEventStatus={onChangeEventStatus}
               isFirst={index === 0}
               isLast={index === sortedEvents.length - 1}
             />
