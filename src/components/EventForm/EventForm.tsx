@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import type { TripEvent, EventType, EventStatus } from '../../types';
-import { StatusDropdown } from '../StatusDropdown/StatusDropdown';
 import { TypeDropdown } from '../TypeDropdown/TypeDropdown';
 import styles from './EventForm.module.css';
 
@@ -36,7 +35,6 @@ export const EventForm: React.FC<EventFormProps> = ({
   const [endTime, setEndTime] = useState(initialData?.endTime || getInitialEndTime());
   const [location, setLocation] = useState(initialData?.location || '');
   const [type, setType] = useState<EventType>(initialData?.type || 'Khác');
-  const [status, setStatus] = useState<EventStatus>(initialData?.status || 'Sắp tới');
 
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -59,9 +57,8 @@ export const EventForm: React.FC<EventFormProps> = ({
       const evS = new Date(ev.startTime).getTime();
       const evE = new Date(ev.endTime).getTime();
       
-      // Chỉ không cho phép nếu 2 event hoàn toàn đè lên nhau 
-      // (sự kiện này bao trùm toàn bộ sự kiện kia hoặc ngược lại)
-      return (s <= evS && e >= evE) || (evS <= s && evE >= e);
+      // Chỉ không cho phép nếu 2 event trùng hoàn toàn khung giờ với nhau
+      return s === evS && e === evE;
     });
   };
 
@@ -89,6 +86,23 @@ export const EventForm: React.FC<EventFormProps> = ({
     
     if (Object.keys(errors).length > 0 || !isFormReady) return;
 
+    let computedStatus: EventStatus = 'Sắp tới';
+    const now = new Date().getTime();
+    const startT = new Date(startTime).getTime();
+    const endT = new Date(endTime).getTime();
+    
+    if (now >= startT && now < endT) {
+      computedStatus = 'Đang diễn ra';
+    } else if (now >= endT) {
+      computedStatus = 'Đã xong';
+    }
+
+    if (initialData && (initialData.status === 'Hủy' || initialData.status === 'Tạm hoãn')) {
+       if (initialData.startTime === startTime && initialData.endTime === endTime) {
+           computedStatus = initialData.status;
+       }
+    }
+
     onSubmit({
       ...(initialData ? { id: initialData.id } : {}),
       title,
@@ -97,7 +111,7 @@ export const EventForm: React.FC<EventFormProps> = ({
       endTime,
       location,
       type,
-      status,
+      status: computedStatus,
       isCompleted: initialData?.isCompleted || false,
     } as TripEvent);
   };
@@ -146,7 +160,7 @@ export const EventForm: React.FC<EventFormProps> = ({
       </div>
       
       {showTimeError && <span className={styles.errorText}>Giờ kết thúc phải lớn hơn giờ bắt đầu</span>}
-      {showOverlapError && <span className={styles.errorText}>Khung giờ bị đè hoàn toàn lên một sự kiện khác</span>}
+      {showOverlapError && <span className={styles.errorText}>Khung giờ trùng hoàn toàn với một sự kiện khác</span>}
 
       <div className={styles.formGroup}>
         <label className={styles.label}>Địa điểm</label>
@@ -167,13 +181,7 @@ export const EventForm: React.FC<EventFormProps> = ({
         />
       </div>
       
-      <div className={styles.formGroup}>
-        <label className={styles.label}>Trạng thái</label>
-        <StatusDropdown 
-          value={status} 
-          onChange={(val) => setStatus(val)} 
-        />
-      </div>
+
 
       <div className={styles.formGroup}>
         <label className={styles.label}>Mô tả</label>
